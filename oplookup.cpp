@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include <cassert>
+#include <bitset>
 #include <unordered_map>
 #include <iostream>
 #include <cstdint>
@@ -141,6 +141,7 @@ int main() {
                         std::cout << "No type\n";
                         break;
                 }
+                std::cout << "Representation: 0b" << std::bitset<8>(instruction.bitrepr) << '\n'; 
                 std::cout << "Operand(s): ";
                 for (size_t i = 0; i < instruction.operands.size(); i++) {
                     OperandType type = instruction.operands[i];
@@ -163,6 +164,7 @@ int main() {
                         std::cout << '\n';
                     }
                 }
+                if (instruction.operands.size() == 0) std::cout << '\n';
             }
         }
     }
