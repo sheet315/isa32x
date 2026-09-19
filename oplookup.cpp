@@ -19,10 +19,10 @@ enum OperandType {
 };
 
 struct Instruction {
-    std::string description;
-    Type type;
+    std::string              description;
+    Type                     type;
     std::vector<OperandType> operands;
-    uint8_t bitrepr;
+    uint8_t                  bitrepr;
 
     Instruction(std::string description, Type type, std::vector<OperandType> operands, uint8_t bitrepr) : description(description), type(type), operands(operands), bitrepr(bitrepr) {}
 };
